@@ -13,17 +13,17 @@ const Navbar = () => {
 	const pathname = usePathname();
 	
 	return (
-		<header className={"w-full fixed top-0 bg-frame-bg border-b border-frame-text/10"}>
+		<header className={"w-full sticky top-0 bg-frame-bg border-b border-frame-text/10"}>
 			<nav className={"flex items-center justify-between w-full p-4"}>
 				<div className="flex items-center gap-8">
 					<Link href="/" className={"flex items-center justify-center"}>
-						<Image draggable={"false"} loading="eager" className={"w-8"} src={logo} alt="logo"/>
+						<Image draggable={"false"} loading="eager" className={"w-10"} src={logo} alt="logo"/>
 						<Image draggable={"false"} loading="eager" className={"w-22 -ml-2"} src={wordmark} alt="logo"/>
 					</Link>
 					
 					<ul className={"flex items-center gap-8 text-[14px]"}>
-						{navLinks.map(({title, path}) => (
-							<li className={clsx("link-underline", pathname === path && "text-frame-accent-hover font-medium")}
+						{navLinks.map(({title, path}, index) => (
+							<li className={clsx("link-underline", pathname === path && "text-frame-accent-hover font-medium", index > 0 && "lg:inline-block hidden")}
 							    key={title}>
 								<Link href={path} title={title}>{title}</Link>
 							</li>
