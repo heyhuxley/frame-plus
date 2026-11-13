@@ -23,7 +23,7 @@ export default function RootLayout({children}: LayoutProps<"/">) {
 	return (
 		<html
 			lang="en"
-			className={`${playfairDisplay.variable} ${inter.variable} ${inter.className} h-full antialiased`}
+			className={`${playfairDisplay.variable} ${inter.variable} h-full antialiased`}
 		>
 		<body className="min-h-full flex flex-col">{children}</body>
 		</html>
