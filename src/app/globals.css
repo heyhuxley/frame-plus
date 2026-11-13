@@ -8,6 +8,7 @@
 @theme {
     /* Public / Lobby colors */
     --color-frame-bg: #F5F1E8;
+    --color-night: #0b0b0b59;
     --color-frame-text: #141414;
     --color-frame-accent: #7A1F2B;
     --color-frame-accent-hover: #5D1722;
@@ -49,5 +50,5 @@
 
 body {
     background: var(--background);
-    color: var(--color-frame-text);
+    color: var(--color-frame-text-theater);
 }
