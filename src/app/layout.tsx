@@ -1,6 +1,13 @@
 import type {Metadata} from "next";
 import {Inter, Playfair_Display} from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/layout/Navbar";
+
+const inter = Inter({
+	variable: "--font-inter",
+	subsets: ["latin"],
+	weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
+})
 
 const playfairDisplay = Playfair_Display({
 	variable: "--font-playfair",
@@ -8,11 +15,6 @@ const playfairDisplay = Playfair_Display({
 	weight: ["400", "500", "600", "700", "800", "900"]
 });
 
-const inter = Inter({
-	variable: "--font-inter",
-	subsets: ["latin"],
-	weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
-})
 
 export const metadata: Metadata = {
 	title: "Create Next App",
@@ -23,9 +25,12 @@ export default function RootLayout({children}: LayoutProps<"/">) {
 	return (
 		<html
 			lang="en"
-			className={`${playfairDisplay.variable} ${inter.variable} h-full antialiased`}
+			className={`${inter.variable} ${playfairDisplay.variable} h-full antialiased`}
 		>
-		<body className="min-h-full flex flex-col">{children}</body>
+		<body className="min-h-full flex flex-col">
+		<Navbar/>
+		{children}
+		</body>
 		</html>
 	);
 }
