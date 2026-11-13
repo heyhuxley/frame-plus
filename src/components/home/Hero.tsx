@@ -41,7 +41,8 @@ const Hero = () => {
 					className="flex justify-between border-b border-frame-text-theater/35 py-4 mix-blend-difference text-[13px]">
 					<p className={""}>Frame+ <span
 						className={"text-frame-text-theater/35 "}>· Second Edition</span></p>
-					<p className={"text-frame-text-theater/35"}>{daysRange}</p>
+					
+					<p className={"text-frame-text-theater/35 sm:block hidden"}>{daysRange}</p>
 					
 					<button
 						className={"flex items-center gap-2 text-frame-text-theater/35 hover:text-frame-text-theater transition-colors"}
@@ -51,8 +52,11 @@ const Hero = () => {
 					</button>
 				</div>
 				
-				<h1 className={"font-serif text-[24px]"}>An online festival of short films. 8 films, three nights, each
-					shown once.</h1>
+				<div className="pt-10">
+					<h1 className={"max-w-2xl font-serif text-xl leading-snug tracking-[-0.01em] text-bone sm:text-2xl"}>An
+						online festival of short films. 8 films, three nights, each
+						shown once.</h1>
+				</div>
 			</div>
 		</section>
 	)
