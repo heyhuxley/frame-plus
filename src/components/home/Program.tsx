@@ -1,30 +1,10 @@
 "use client"
 
 import {festivalFacts} from "@/lib/festival-facts";
-import {useGSAP} from "@gsap/react";
-import gsap from "gsap";
-import {ScrollTrigger} from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger)
+import useScrollReveal from "@/hooks/useScrollReveal";
 
 const Program = () => {
-	
-	useGSAP(() => {
-		const tl = gsap.timeline({
-			scrollTrigger: {
-				trigger: "#the-program",
-				start: "top bottom",
-				end: "top center",
-				scrub: true
-			}
-		})
-		
-		tl.from("#the-program", {
-			opacity: 0,
-			yPercent: 5,
-			ease: "linear",
-		})
-	}, [])
+	useScrollReveal("#the-program");
 	
 	return (
 		<section id="the-program"

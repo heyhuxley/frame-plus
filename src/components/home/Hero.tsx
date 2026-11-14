@@ -13,6 +13,7 @@ const Hero = () => {
 	const [soundOn, setSoundOn] = useState(false)
 	const {time, dayLabel} = getHeroDailyHighlights()[0];
 	
+	
 	return (
 		<section
 			className={"relative mx-auto flex min-h-170 w-full max-w-360 flex-col sm:min-h-195 lg:min-h-210"}>
@@ -26,12 +27,12 @@ const Hero = () => {
 				className={"absolute inset-0 w-full h-full object-cover"}
 			>
 				<source src={trailerUrl} type="video/mp4"/>
-				<track
-					// src="/path/to/captions.vtt"
-					kind="subtitles"
-					srcLang="en"
-					label="English"
-				/>
+				{/*<track*/}
+				{/*	// src="/path/to/captions.vtt"*/}
+				{/*	kind="subtitles"*/}
+				{/*	srcLang="en"*/}
+				{/*	label="English"*/}
+				{/*/>*/}
 				Your browser does not support the video tag.
 			</video>
 			
