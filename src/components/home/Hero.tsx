@@ -1,23 +1,47 @@
 "use client"
 
 import {acceptedFilms} from "@/lib/accepted-films";
-import {useState} from "react"
+import {useRef, useState} from "react"
 import {SpeakerHighIcon, SpeakerXIcon} from "@phosphor-icons/react"
 import BuyTicket from "@/components/ui/BuyTicket";
 import FilmLink from "@/components/ui/FilmLink";
 import Schedule from "@/components/ui/Schedule";
 import {getHeroDailyHighlights} from "@/lib/hero-highlights";
+import {useGSAP} from "@gsap/react";
+import gsap from "gsap";
+import {ScrollTrigger} from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger)
 
 const Hero = () => {
 	const {posterUrl, trailerUrl, title, director, country, runtime, synopsis} = acceptedFilms[0];
+	const videoRef = useRef<HTMLVideoElement>(null)
 	const [soundOn, setSoundOn] = useState(false)
 	const {time, dayLabel} = getHeroDailyHighlights()[0];
 	
+	useGSAP(() => {
+		const ctx = gsap.context(() => {
+			gsap.from(videoRef.current, {
+				objectFit: "bottom",
+				ease: "none",
+				scrollTrigger: {
+					trigger: "#hero",
+					start: "top top",
+					end: "bottom top",
+					scrub: 0.5,
+				},
+			});
+		}, "#hero");
+		
+		return () => ctx.revert();
+	}, [videoRef])
 	
 	return (
 		<section
+			id="hero"
 			className={"relative mx-auto flex min-h-170 w-full max-w-360 flex-col sm:min-h-195 lg:min-h-210"}>
 			<video
+				ref={videoRef}
 				poster={posterUrl}
 				preload="auto"
 				muted={soundOn}
