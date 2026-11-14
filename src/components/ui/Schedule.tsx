@@ -1,11 +1,13 @@
 import {getHeroDailyHighlights, HeroDay} from "@/lib/hero-highlights";
+import Link from "next/link";
 
 
 const Schedule = () => {
 	const days: HeroDay[] = getHeroDailyHighlights();
 	
 	return (
-		<div
+		<Link
+			href="/schedule"
 			className={"grid sm:grid-cols-3 divide-y sm:divide-x divide-frame-text-theater/35  border-t border-frame-text-theater/35"}>
 			{days.map(({dateKey, dayLabel, count, filmTitle, time}) => (
 				<div
@@ -19,7 +21,7 @@ const Schedule = () => {
 					</p>
 				</div>
 			))}
-		</div>
+		</Link>
 	)
 }
 export default Schedule

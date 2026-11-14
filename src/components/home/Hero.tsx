@@ -56,7 +56,7 @@ const Hero = () => {
 				<div className={"flex flex-col lg:flex-row lg:items-end justify-between gap-10 lg:gap-0 py-10"}>
 					<div className="flex flex-col gap-14 leading-none">
 						<h1 className={"max-w-2xl font-serif text-xl leading-snug tracking-[-0.01em] text-bone sm:text-2xl"}>An
-							online festival of short films. 8 films, three nights, each
+							online festival of short films. 8 - 12 films, three nights, each
 							shown once.</h1>
 						
 						<div className={"flex flex-col"}>
