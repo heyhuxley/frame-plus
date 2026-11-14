@@ -16,7 +16,7 @@ const Hero = () => {
 	
 	return (
 		<section
-			className={"relative mx-auto flex min-h-170 w-full max-w-360 flex-col px-4 pt-6 md:px-6 sm:min-h-195 lg:min-h-210"}>
+			className={"relative mx-auto flex min-h-170 w-full max-w-360 flex-col sm:min-h-195 lg:min-h-210"}>
 			<video
 				poster={posterUrl}
 				preload="auto"
@@ -36,9 +36,8 @@ const Hero = () => {
 				Your browser does not support the video tag.
 			</video>
 			
-			
 			<div className="absolute inset-0 bg-night"/>
-			<div className="absolute inset-0 px-6 pt-2 flex flex-col justify-between">
+			<div className="relative flex flex-1 flex-col justify-between px-6 pt-2">
 				<div
 					className="flex justify-between border-b border-frame-text-theater/35 py-4 mix-blend-difference text-[13px]">
 					<p className={""}>Frame+ <span
@@ -54,7 +53,7 @@ const Hero = () => {
 					</button>
 				</div>
 				
-				<div className={"flex flex-col lg:flex-row lg:items-end justify-between gap-10 lg:gap-0"}>
+				<div className={"flex flex-col lg:flex-row lg:items-end justify-between gap-10 lg:gap-0 py-10"}>
 					<div className="flex flex-col gap-14 leading-none">
 						<h1 className={"max-w-2xl font-serif text-xl leading-snug tracking-[-0.01em] text-bone sm:text-2xl"}>An
 							online festival of short films. 8 films, three nights, each
