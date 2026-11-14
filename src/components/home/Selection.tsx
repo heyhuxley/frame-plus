@@ -18,7 +18,7 @@ const Selection = () => {
 				</div>
 			</div>
 			
-			<div className="flex gap-6 overflow-x-auto overflow-y-visible scrollbar-none py-4">
+			<div className="flex gap-6 overflow-x-auto overflow-y-visible scrollbar-none py-3">
 				{films.map((film) => (
 					<FilmCard key={film.id} {...film} />
 				))}
