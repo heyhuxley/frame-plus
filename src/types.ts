@@ -15,3 +15,11 @@ export interface Film {
 	status: "accepted";
 	screeningAt: string; // ISO 8601, 24-hour time
 }
+
+export interface FilmCardProps {
+	id: string;
+	title: string;
+	director: string;
+	runtimeMinutes: number;
+	posterUrl: string;
+}
