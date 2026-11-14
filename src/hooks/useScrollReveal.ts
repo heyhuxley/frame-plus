@@ -7,20 +7,25 @@ gsap.registerPlugin(ScrollTrigger);
 
 const useScrollReveal = (trigger: string) => {
 	return useGSAP(() => {
-		const tl = gsap.timeline({
-			scrollTrigger: {
-				trigger,
-				start: "top bottom",
-				end: "top center",
-				scrub: 0.5
-			},
-		})
+		if (typeof window === "undefined") return;
 		
-		tl.from("#the-program", {
-			opacity: 0,
-			yPercent: 5,
-			ease: "linear",
+		const ctx = gsap.context(() => {
+			const tl = gsap.timeline({
+				scrollTrigger: {
+					trigger,
+					start: "top bottom",
+					end: "top center",
+					scrub: 0.5
+				},
+			})
+			
+			tl.from(trigger, {
+				opacity: 0,
+				yPercent: 5,
+				ease: "linear",
+			})
 		})
+		return () => ctx.revert()
 	}, {dependencies: [trigger]})
 }
 
