@@ -1,15 +1,19 @@
-import {acceptedFilms} from "@/lib/accepted-films";
+import {getHeroDailyHighlights, HeroDay} from "@/lib/hero-highlights";
 
 
 const Schedule = () => {
-	const schedule = acceptedFilms.slice(0, 3);
+	const days: HeroDay[] = getHeroDailyHighlights();
 	
 	return (
-		<div className={"w-full grid grid-cols-3 divide-solid divide-x border-t"}>
-			{schedule.map(({id, title, runtime, screeningAt}) => (
-				<div className={"col-span-1 p-4"} key={id}>
-					<p>{screeningAt} · 3 films</p>
-					<p>{title} {runtime}</p>
+		<div className={"grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-x divide-frame-text-theater/35  border-t border-frame-text-theater/35"}>
+			{days.map(({dateKey, dayLabel, count, filmTitle, time}) => (
+				<div className={"p-4 flex justify-between sm:justify-start sm:flex-col gap-1"} key={dateKey}>
+					<p className="text-[13px]">
+						{dayLabel} <span className={"text-bone/70"}>· {count} films</span>
+					</p>
+					<p className="text-[2rem] font-serif">
+						{filmTitle} <span className={"text-bone/70 text-[13px] font-sans"}>{time}</span>
+					</p>
 				</div>
 			))}
 		</div>

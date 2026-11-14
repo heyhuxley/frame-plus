@@ -6,11 +6,13 @@ import {SpeakerHighIcon, SpeakerXIcon} from "@phosphor-icons/react"
 import BuyTicket from "@/components/ui/BuyTicket";
 import FilmLink from "@/components/ui/FilmLink";
 import Schedule from "@/components/ui/Schedule";
+import {getHeroDailyHighlights} from "@/lib/hero-highlights";
 
 
 const Hero = () => {
-	const {posterUrl, trailerUrl, title, director, country, runtime, synopsis} = acceptedFilms[1];
+	const {posterUrl, trailerUrl, title, director, country, runtime, synopsis} = acceptedFilms[0];
 	const [soundOn, setSoundOn] = useState(false)
+	const {time, dayLabel} = getHeroDailyHighlights()[0];
 	
 	return (
 		<section
@@ -36,7 +38,7 @@ const Hero = () => {
 			
 			
 			<div className="absolute inset-0 bg-night"/>
-			<div className="absolute inset-0 px-6 py-2 flex flex-col justify-between">
+			<div className="absolute inset-0 px-6 pt-2 flex flex-col justify-between">
 				<div
 					className="flex justify-between border-b border-frame-text-theater/35 py-4 mix-blend-difference text-[13px]">
 					<p className={""}>Frame+ <span
@@ -52,14 +54,14 @@ const Hero = () => {
 					</button>
 				</div>
 				
-				<div className={"flex flex-col lg:flex-row lg:items-end justify-between"}>
+				<div className={"flex flex-col lg:flex-row lg:items-end justify-between gap-10"}>
 					<div className="flex flex-col gap-14 leading-none">
 						<h1 className={"max-w-2xl font-serif text-xl leading-snug tracking-[-0.01em] text-bone sm:text-2xl"}>An
 							online festival of short films. 8 films, three nights, each
 							shown once.</h1>
 						
 						<div className={"flex flex-col"}>
-							<span className={"text-frame-text-theater/35 text-[13px] mix-blend-difference"}>Opening film · [TODO], 21:00</span>
+							<span className={"text-frame-text-theater/35 text-[13px] mix-blend-difference"}>Opening film · {dayLabel}, {time}</span>
 							
 							<p className={"mt-4 max-w-[12ch] font-serif text-[56px] leading-[0.92] tracking-[-0.02em] sm:text-[104px] lg:text-[128px] xl:text-[148px]"}>{title}</p>
 						</div>
