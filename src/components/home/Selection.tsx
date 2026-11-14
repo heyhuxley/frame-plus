@@ -18,7 +18,7 @@ const Selection = () => {
 				</div>
 			
 			</div>
-			<div className="flex gap-6">
+			<div className="flex gap-6 overflow-x-scroll">
 				{films.map((film) => (
 					<FilmCard key={film.id} {...film} />
 				))}
