@@ -21,7 +21,7 @@ const Program = () => {
 					{festivalFacts.map(({label, value}) => (
 						<div className={"py-4 pr-4 border-b border-frame-text/20"} key={label}>
 							<span className={"text-xs text-muted"}>{label}</span>
-							<p className={"w-max mt-1 text-[15px] font-medium"}>{value}</p>
+							<p className={"mt-1 text-[15px] font-medium"}>{value}</p>
 						</div>
 					))}
 				</div>
