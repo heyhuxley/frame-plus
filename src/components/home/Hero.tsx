@@ -3,7 +3,6 @@
 import {acceptedFilms} from "@/lib/accepted-films";
 import {useState} from "react"
 import {SpeakerHighIcon, SpeakerXIcon} from "@phosphor-icons/react"
-import Link from "next/link";
 import BuyTicket from "@/components/ui/BuyTicket";
 import FilmLink from "@/components/ui/FilmLink";
 
@@ -22,7 +21,7 @@ const Hero = () => {
 				autoPlay
 				playsInline
 				loop
-				className={"absolute w-full inset-0"}
+				className={"absolute inset-0 w-full h-full object-cover"}
 			>
 				<source src={trailerUrl} type="video/mp4"/>
 				<track
@@ -78,7 +77,7 @@ const Hero = () => {
 					<div className="flex flex-col">
 						<div className={"flex items-center gap-4 text-[14px]"}>
 							<BuyTicket text={"Get Tickets"}/>
-							<FilmLink text={"About the film"} />
+							<FilmLink>About the film</FilmLink>
 						</div>
 					
 					</div>
