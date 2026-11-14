@@ -10,7 +10,7 @@ import {getHeroDailyHighlights} from "@/lib/hero-highlights";
 
 
 const Hero = () => {
-	const {posterUrl, trailerUrl, title, director, country, runtime, synopsis} = acceptedFilms[1];
+	const {posterUrl, trailerUrl, title, director, country, runtime, synopsis} = acceptedFilms[0];
 	const [soundOn, setSoundOn] = useState(false)
 	const {time, dayLabel} = getHeroDailyHighlights()[0];
 	
