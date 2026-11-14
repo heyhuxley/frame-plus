@@ -52,7 +52,7 @@ const Hero = () => {
 					</button>
 				</div>
 				
-				<div className={"flex items-end justify-between"}>
+				<div className={"flex flex-col lg:flex-row lg:items-end justify-between gap-10"}>
 					<div className="pt-10 flex flex-col gap-14 leading-none">
 						<h1 className={"max-w-2xl font-serif text-xl leading-snug tracking-[-0.01em] text-bone sm:text-2xl"}>An
 							online festival of short films. 8 films, three nights, each
@@ -82,6 +82,10 @@ const Hero = () => {
 						</div>
 					
 					</div>
+				</div>
+				
+				<div className="">
+				
 				</div>
 			</div>
 		</section>
