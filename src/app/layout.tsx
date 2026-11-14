@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 	description: "A digital short film festival. Curated premieres. Scheduled screenings. No library.",
 	icons: {
 		icon: "/frame-icon-color.svg"
-	}
+	},
 };
 
 export default function RootLayout({children}: LayoutProps<"/">) {

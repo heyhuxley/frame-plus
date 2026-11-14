@@ -10,7 +10,7 @@ import {getHeroDailyHighlights} from "@/lib/hero-highlights";
 
 
 const Hero = () => {
-	const {posterUrl, trailerUrl, title, director, country, runtime, synopsis} = acceptedFilms[0];
+	const {posterUrl, trailerUrl, title, director, country, runtime, synopsis} = acceptedFilms[1];
 	const [soundOn, setSoundOn] = useState(false)
 	const {time, dayLabel} = getHeroDailyHighlights()[0];
 	
@@ -54,7 +54,7 @@ const Hero = () => {
 					</button>
 				</div>
 				
-				<div className={"flex flex-col lg:flex-row lg:items-end justify-between gap-10"}>
+				<div className={"flex flex-col lg:flex-row lg:items-end justify-between gap-10 lg:gap-0"}>
 					<div className="flex flex-col gap-14 leading-none">
 						<h1 className={"max-w-2xl font-serif text-xl leading-snug tracking-[-0.01em] text-bone sm:text-2xl"}>An
 							online festival of short films. 8 films, three nights, each
@@ -78,11 +78,12 @@ const Hero = () => {
 					</div>
 					
 					<div className="w-max flex flex-col">
-						<div className={"flex items-center gap-4 text-[14px]"}>
-							<BuyTicket text={"Get Tickets"}/>
-							<FilmLink text={"About the film"}/>
+						<div className={"flex flex-wrap items-center gap-5 text-[14px]"}>
+							<BuyTicket>Get Tickets</BuyTicket>
+							<FilmLink>About the film</FilmLink>
 						</div>
-						<p className={"mt-3 text-[13px] text-bone/70"}>From €12 a screening, or €64 for the weekend.</p>
+						<p className={"w-max mt-3 text-[13px] text-bone/70"}>From €12 a screening, or €64 for the
+							weekend.</p>
 					</div>
 				</div>
 				
