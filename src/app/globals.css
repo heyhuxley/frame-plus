@@ -13,6 +13,7 @@
     --color-frame-accent: #7A1F2B;
     --color-frame-accent-hover: #5D1722;
     --color-frame-border: #D8D2C4;
+    --color-bone: #ededed;
 
     /* Theater mode (logged-in app / video pages) */
     --color-frame-bg-theater: #0B0B0B;

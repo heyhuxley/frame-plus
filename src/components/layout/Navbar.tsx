@@ -23,7 +23,7 @@ const Navbar = () => {
 					
 					<ul className={"flex items-center gap-8 text-[14px]"}>
 						{navLinks.map(({title, path}, index) => (
-							<li className={clsx("link-underline", pathname === path && "text-frame-accent-hover font-medium", index > 0 && "lg:inline-block hidden")}
+							<li className={clsx("link-underline text-frame-text", pathname === path && "text-frame-accent-hover font-medium", index > 0 && "lg:inline-block hidden")}
 							    key={title}>
 								<Link href={path} title={title}>{title}</Link>
 							</li>
@@ -35,7 +35,8 @@ const Navbar = () => {
 					<Link className={"link-underline text-frame-text"} href={"/my-tickets"}>My Tickets</Link>
 					<Link
 						className={"font-semibold bg-frame-accent hover:bg-frame-accent-hover hover:scale-95 transition-transform text-frame-bg px-4 py-2 rounded-sm"}
-						href={"/my-tickets"}>Buy Tickets</Link>
+						href={"/my-tickets"}>Buy Tickets
+					</Link>
 				</div>
 			</nav>
 		</header>
