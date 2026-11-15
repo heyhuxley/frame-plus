@@ -19,22 +19,22 @@ const Hero = () => {
 	const [soundOn, setSoundOn] = useState(false)
 	const {time, dayLabel} = getHeroDailyHighlights()[0];
 	
-	useGSAP(() => {
-		const ctx = gsap.context(() => {
-			gsap.from(videoRef.current, {
-				objectFit: "bottom",
-				ease: "none",
-				scrollTrigger: {
-					trigger: "#hero",
-					start: "top top",
-					end: "bottom top",
-					scrub: 0.5,
-				},
-			});
-		}, "#hero");
-		
-		return () => ctx.revert();
-	}, [videoRef])
+	// useGSAP(() => {
+	// 	const ctx = gsap.context(() => {
+	// 		gsap.from(videoRef.current, {
+	// 			objectFit: "bottom",
+	// 			ease: "none",
+	// 			scrollTrigger: {
+	// 				trigger: "#hero",
+	// 				start: "top top",
+	// 				end: "bottom top",
+	// 				scrub: 0.5,
+	// 			},
+	// 		});
+	// 	}, "#hero");
+	//
+	// 	return () => ctx.revert();
+	// }, [videoRef])
 	
 	return (
 		<section
@@ -61,7 +61,7 @@ const Hero = () => {
 			</video>
 			
 			<div className="absolute inset-0 bg-night"/>
-			<div className="relative flex flex-1 flex-col justify-between px-4 md:px-6 pt-2">
+			<div className="relative flex flex-1 flex-col justify-between px-4 md:px-6 pt-4">
 				<div
 					className="flex justify-between border-b border-frame-text-theater/35 py-4 mix-blend-difference text-[13px]">
 					<p className={""}>Frame+ <span

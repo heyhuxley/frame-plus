@@ -35,8 +35,8 @@ const Selection = () => {
 	useScrollReveal("#selection")
 	
 	return (
-		<section id="selection" className={"px-4 md:px-6 py-20 flex flex-col gap-8"}>
-			<div className="flex items-center justify-between">
+		<section id="selection" className={"py-20 flex flex-col gap-8"}>
+			<div className="px-4 md:px-6 flex items-center justify-between">
 				<div className="">
 					<h2 className={"font-serif font-medium text-frame-text text-4xl tracking-[-0.02em] sm:text-5xl"}>
 						This Edition’s Selection.
@@ -46,7 +46,7 @@ const Selection = () => {
 			</div>
 			
 			<div ref={containerRef} id="selections"
-			     className="flex gap-6 overflow-x-auto overflow-y-hidden scrollbar-none py-3">
+			     className="px-4 md:px-6 flex gap-6 overflow-x-scroll overflow-y-hidden scrollbar-none py-3">
 				{films.map((film) => (
 					<FilmCard key={film.id} {...film} />
 				))}

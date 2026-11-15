@@ -1,0 +1,53 @@
+"use client"
+
+import {useState} from "react";
+import {Film, films} from "@/lib/mock-data";
+import Image from "next/image";
+import Trailer from "@/components/ui/Trailer";
+
+const Trailers = () => {
+	const [trailer, setTrailer] = useState<Film>(films[0])
+	const {title, director, country, posterUrl, runtime, screeningAt, trailerUrl} = trailer;
+	
+	return (
+		<section className={"px-4 md:px-6 flex flex-col gap-10"}>
+			<div className="">
+				<h2 className={"font-serif font-medium text-frame-text text-4xl tracking-[-0.02em] sm:text-5xl"}>
+					Watch the Trailers.
+				</h2>
+				<p className={"mt-3 text-sm text-muted"}> The films themselves play once, on their night.</p>
+			</div>
+			
+			<div
+				className="grid gap-10 border-t border-frame-text/35 pt-8 lg:grid-cols-[minmax(0,8fr)_minmax(0,4fr)] lg:gap-12">
+				<div className="">
+					<video
+						poster={posterUrl}
+						preload="auto"
+						muted={true}
+						autoPlay
+						playsInline
+						loop
+						// controls
+						className={"w-full"}
+					>
+						<source src={trailerUrl} type="video/mp4"/>
+						<track
+							// src="/path/to/captions.vtt"
+							kind="subtitles"
+							srcLang="en"
+							label="English"
+						/>
+						Your browser does not support the video tag.
+					</video>
+				</div>
+				<div className="w-full flex flex-col">
+					{films.map((film) => (
+						<Trailer key={film.id} {...film} />
+					))}
+				</div>
+			</div>
+		</section>
+	)
+}
+export default Trailers
