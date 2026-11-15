@@ -1,28 +1,26 @@
-import type { NextConfig } from "next";
+import type {NextConfig} from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
-  turbopack: {
-    rules: {
-      "*.css": {
-        loaders: ["@tailwindcss/turbopack"],
-        as: "*.css",
-      },
-    },
-  },
+	/* config options here */
+	images: {
+		remotePatterns: [
+			{
+				protocol: 'https',
+				hostname: 'images.unsplash.com',
+				port: '',
+				pathname: '/**',
+			},
+		],
+	},
+	turbopack: {
+		rules: {
+			"*.css": {
+				loaders: ["@tailwindcss/turbopack"],
+				as: "*.css",
+			},
+		},
+	},
 };
 
-// module.exports = {
-//   images: {
-//     remotePatterns: [
-//       {
-//         protocol: 'https',
-//         hostname: 'images.unsplash.com',
-//         port: '',
-//         pathname: '/**',
-//       },
-//     ],
-//   },
-// }
 
 export default nextConfig;

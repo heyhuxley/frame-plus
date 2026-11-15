@@ -7,9 +7,9 @@ import Ring from "@/components/ui/Ring";
 
 const FilmCard = ({id, title, director, runtimeMinutes, posterUrl}: FilmCardProps) => {
 	return (
-		<Link href={`/film/${id}`} className="group text-frame-text film-card hover:-translate-y-2 h-full w-50 shrink-0 snap-start sm:w-57.5 lg:w-62.5">
+		<Link href={`/film/${id}`} className="group text-frame-text film-card hover:-translate-y-2 transition-[translate] duration-200 h-full w-50 shrink-0 snap-start sm:w-57.5 lg:w-62.5">
 			<div className="w-full h-full relative aspect-2/3 border-[1.5px] border-frame-border shadow-xl shadow-frame-text/15 group-hover:shadow-frame-accent/15 group-hover:border-frame-accent/85 transition-colors overflow-hidden">
-				<img width={230} height={345} src={posterUrl} alt={`${title} by ${director}`}
+				<Image width={230} height={345} src={posterUrl} alt={`${title} by ${director}`}
 				       className="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform text-[12px]"/>
 				
 				<div className="absolute inset-0 w-full h-full flex justify-center items-center group-hover:opacity-0 transition-opacity duration-200">

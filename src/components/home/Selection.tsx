@@ -21,6 +21,7 @@ const Selection = () => {
 				ease: "back.inOut",
 				duration: 0.6,
 				stagger: 0.08,
+				clearProps: "all",
 				scrollTrigger: {
 					trigger: containerRef.current,
 					start: "top 85%",
