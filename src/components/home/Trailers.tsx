@@ -2,7 +2,6 @@
 
 import {useState} from "react";
 import {Film, films} from "@/lib/mock-data";
-import Image from "next/image";
 import Trailer from "@/components/ui/Trailer";
 
 const Trailers = () => {
@@ -41,9 +40,11 @@ const Trailers = () => {
 						Your browser does not support the video tag.
 					</video>
 				</div>
-				<div className="w-full flex flex-col">
+				<div className="w-full flex flex-col divide-solid divide-y divide-frame-text/15">
 					{films.map((film) => (
-						<Trailer key={film.id} {...film} />
+						<button key={film.id} onClick={() => setTrailer(film)}>
+							<Trailer {...film} currentTrailerId={trailer.id}/>
+						</button>
 					))}
 				</div>
 			</div>
