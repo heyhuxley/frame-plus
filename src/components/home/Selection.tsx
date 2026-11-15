@@ -3,9 +3,29 @@
 import useScrollReveal from "@/hooks/useScrollReveal";
 import {films} from "@/lib/mock-data";
 import FilmCard from "@/components/ui/FilmCard";
+import {useGSAP} from "@gsap/react";
+import gsap from "gsap";
+import {ScrollTrigger} from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger)
 
 const Selection = () => {
 	useScrollReveal("#selection")
+	
+	// useGSAP(() => {
+	// 	gsap.from(".film-card", {
+	// 		opacity: 0,
+	// 		yPercent: -10,
+	// 		scrollTrigger: {
+	// 			trigger: "#selections",
+	// 			start: "top center",
+	// 			scrub: 0.5
+	// 		},
+	// 		stagger: 0.25
+	// 	})
+	//
+	// }, [])
+	
 	
 	return (
 		<section id="selection" className={"px-4 md:px-6 py-20 flex flex-col gap-8"}>
@@ -18,7 +38,7 @@ const Selection = () => {
 				</div>
 			</div>
 			
-			<div className="flex gap-6 overflow-x-auto overflow-y-visible scrollbar-none py-3">
+			<div id="selections" className="flex gap-6 overflow-x-auto overflow-y-visible scrollbar-none py-3">
 				{films.map((film) => (
 					<FilmCard key={film.id} {...film} />
 				))}
