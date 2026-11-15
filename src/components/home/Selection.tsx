@@ -1,29 +1,35 @@
 "use client"
 
-import useScrollReveal from "@/hooks/useScrollReveal";
 import {films} from "@/lib/mock-data";
 import FilmCard from "@/components/ui/FilmCard";
 import {useGSAP} from "@gsap/react";
 import gsap from "gsap";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
+import {useRef} from "react";
+import useScrollReveal from "@/hooks/useScrollReveal";
 
 gsap.registerPlugin(ScrollTrigger)
 
 const Selection = () => {
-	// useGSAP(() => {
-	// 	gsap.from(".film-card", {
-	// 		opacity: 0,
-	// 		y: 30,
-	// 		ease: "power2.out",
-	// 		duration: 0.6,
-	// 		stagger: 0.25,
-	// 		scrollTrigger: {
-	// 			trigger: "#selections",
-	// 			start: "top 85%",
-	// 			once: true
-	// 		},
-	// 	})
-	// }, {dependencies: [films]})
+	const containerRef = useRef<HTMLDivElement>(null);
+	
+	useGSAP(
+		() => {
+			gsap.from(".film-card", {
+				opacity: 0,
+				y: 40,
+				ease: "back.inOut",
+				duration: 0.6,
+				stagger: 0.08,
+				scrollTrigger: {
+					trigger: containerRef.current,
+					start: "top 85%",
+					once: true,
+				},
+			})
+		},
+		{scope: containerRef, dependencies: [films]}
+	)
 	
 	useScrollReveal("#selection")
 	
@@ -38,7 +44,8 @@ const Selection = () => {
 				</div>
 			</div>
 			
-			<div id="selections" className="flex gap-6 overflow-x-auto overflow-y-hidden scrollbar-none py-3">
+			<div ref={containerRef} id="selections"
+			     className="flex gap-6 overflow-x-auto overflow-y-hidden scrollbar-none py-3">
 				{films.map((film) => (
 					<FilmCard key={film.id} {...film} />
 				))}
