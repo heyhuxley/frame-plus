@@ -42,7 +42,7 @@ const Trailers = () => {
 						playsInline
 						loop
 						// controls
-						className={"w-full"}
+						className={"w-full aspect-square"}
 					>
 						<source src={trailerUrl} type="video/mp4"/>
 						<track
@@ -54,7 +54,7 @@ const Trailers = () => {
 						Your browser does not support the video tag.
 					</video>
 					
-					<div className="text-frame-text flex items-center justify-between">
+					<div className="text-frame-text flex flex-col md:flex-row md:items-center justify-between gap-4">
 						<div>
 							<p className={"font-serif text-3xl tracking-[-0.02em] sm:text-4xl"}>{title}</p>
 							<p className={"mt-2 text-sm text-muted"}>{director} · {country} · {runtime} · {`${dayName} ${time}`}</p>
