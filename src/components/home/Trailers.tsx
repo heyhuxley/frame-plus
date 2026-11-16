@@ -23,7 +23,7 @@ const Trailers = () => {
 	useScrollReveal("#trailers")
 	
 	return (
-		<section id="trailers" className={"px-4 md:px-6 flex flex-col gap-10"}>
+		<section id="trailers" className={"px-4 md:px-6 py-12 flex flex-col gap-10"}>
 			<div className="">
 				<h2 className={"font-serif font-medium text-frame-text text-4xl tracking-[-0.02em] sm:text-5xl"}>
 					Watch the Trailers.

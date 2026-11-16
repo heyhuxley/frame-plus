@@ -10,8 +10,10 @@ import {getHeroDailyHighlights} from "@/lib/hero-highlights";
 import {useGSAP} from "@gsap/react";
 import gsap from "gsap";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
+import {SplitText} from "gsap/SplitText";
 
 gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(SplitText)
 
 const Hero = () => {
 	const {posterUrl, trailerUrl, title, director, country, runtime, synopsis} = acceptedFilms[0];
@@ -35,6 +37,19 @@ const Hero = () => {
 	//
 	// 	return () => ctx.revert();
 	// }, [videoRef])
+	useGSAP(() => {
+		
+		SplitText.create("#title", {type: "lines", linesClass: "highlight"});
+		
+		gsap.from(".highlight", {
+			y: 30,
+			opacity: 0,
+			stagger: {
+				amount: 0.5
+			},
+			ease: "power2.inOut"
+		})
+	}, [])
 	
 	return (
 		<section
@@ -63,7 +78,7 @@ const Hero = () => {
 			<div className="absolute inset-0 bg-night"/>
 			<div className="relative flex flex-1 flex-col justify-between px-4 md:px-6 pt-4">
 				<div
-					className="flex justify-between border-b border-frame-text-theater/35 py-4 mix-blend-difference text-[13px]">
+					className="highlight flex justify-between border-b border-frame-text-theater/35 py-4 mix-blend-difference text-[13px]">
 					<p className={""}>Frame+ <span
 						className={"text-frame-text-theater/35 "}>· Second Edition</span></p>
 					
@@ -79,33 +94,37 @@ const Hero = () => {
 				
 				<div className={"flex flex-col lg:flex-row lg:items-end justify-between gap-10 lg:gap-0 py-10"}>
 					<div className="flex flex-col gap-14 leading-none">
-						<h1 className={"max-w-2xl font-serif text-xl leading-snug tracking-[-0.01em] text-bone sm:text-2xl"}>An
+						<p className={"highlight max-w-2xl font-serif text-xl leading-snug tracking-[-0.01em] text-bone sm:text-2xl"}>An
 							online festival of short films. 8 - 12 films, three nights, each
-							shown once.</h1>
+							shown once.
+						</p>
 						
 						<div className={"flex flex-col"}>
-							<span className={"text-frame-text-theater/35 text-[13px] mix-blend-difference"}>Opening film · {dayLabel}, {time}</span>
+							<span className={"highlight text-frame-text-theater/35 text-[13px] mix-blend-difference"}>Opening film · {dayLabel}, {time}</span>
 							
-							<p className={"mt-4 max-w-[12ch] font-serif text-[56px] leading-[0.92] tracking-[-0.02em] sm:text-[104px] lg:text-[128px] xl:text-[148px]"}>{title}</p>
+							<p id="title"
+							   className={"mt-4 max-w-[12ch] font-serif text-[56px] leading-[0.92] tracking-[-0.02em] sm:text-[104px] lg:text-[128px] xl:text-[148px]"}>{title}</p>
 						</div>
 						<div className="flex flex-col gap-1">
-							<p className={"text-[18px]"}>A film by {director} <span
+							<p className={"highlight text-[18px]"}>A film by {director} <span
 								className={"text-frame-text-theater/35 mix-blend-difference"}>· {country} · {runtime}</span>
 							</p>
 							
-							<p className={"mt-3 text-[15px] leading-relaxed text-bone/85"}>{synopsis}</p>
-							<p className={"mt-3 text-[13px] text-bone/70"}>The director joins for questions once the
+							<p className={"highlight mt-3 text-[15px] leading-relaxed text-bone/85"}>{synopsis}</p>
+							<p className={"highlight mt-3 text-[13px] text-bone/70"}>The director joins for questions
+								once the
 								credits
 								end.</p>
 						</div>
 					</div>
 					
 					<div className="w-max flex flex-col">
-						<div className={"flex flex-wrap items-center gap-5 text-[14px]"}>
+						<div className={"highlight flex flex-wrap items-center gap-5 text-[14px]"}>
 							<BuyTicket>Get Tickets</BuyTicket>
 							<FilmLink>About the film</FilmLink>
 						</div>
-						<p className={"w-max mt-3 text-[13px] text-bone/70"}>From €12 a screening, or €64 for the
+						<p className={"highlight w-max mt-3 text-[13px] text-bone/70"}>From €12 a screening, or €64 for
+							the
 							weekend.</p>
 					</div>
 				</div>
