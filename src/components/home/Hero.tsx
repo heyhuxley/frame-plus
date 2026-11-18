@@ -18,7 +18,6 @@ gsap.registerPlugin(SplitText)
 
 const Hero = () => {
 	const {id, posterUrl, trailerUrl, title, director, country, runtime, synopsis} = acceptedFilms[0];
-	const videoRef = useRef<HTMLVideoElement>(null)
 	const [soundOn, setSoundOn] = useState(false)
 	const {time, dayLabel} = getHeroDailyHighlights()[0];
 	
@@ -41,6 +40,17 @@ const Hero = () => {
 	useGSAP(() => {
 		SplitText.create("#title", {type: "lines", linesClass: "highlight"});
 		
+		gsap.to("#hero-bg-video", {
+			yPercent: -5,
+			ease: "none",
+			scrollTrigger: {
+				trigger: "#hero",
+				start: "top top",
+				end: "bottom top",
+				scrub: 0.5
+			}
+		})
+		
 		gsap.from(".highlight", {
 			y: 30,
 			opacity: 0,
@@ -60,24 +70,18 @@ const Hero = () => {
 	return (
 		<section
 			id="hero"
-			className={"relative mx-auto flex min-h-170 w-full max-w-360 flex-col sm:min-h-195 lg:min-h-210"}>
+			className={"relative mx-auto flex min-h-170 w-full max-w-360 flex-col sm:min-h-195 lg:min-h-210 overflow-hidden"}>
 			<video
-				ref={videoRef}
+				id="hero-bg-video"
 				poster={posterUrl}
 				preload="auto"
 				muted={soundOn}
 				autoPlay
 				playsInline
 				loop
-				className={"absolute inset-0 w-full h-full object-cover"}
+				className={"absolute inset-0 w-full h-[120%] object-cover"}
 			>
 				<source src={trailerUrl} type="video/mp4"/>
-				{/*<track*/}
-				{/*	// src="/path/to/captions.vtt"*/}
-				{/*	kind="subtitles"*/}
-				{/*	srcLang="en"*/}
-				{/*	label="English"*/}
-				{/*/>*/}
 				Your browser does not support the video tag.
 			</video>
 			
@@ -88,7 +92,7 @@ const Hero = () => {
 					<p className={""}>Frame+ <span
 						className={"text-frame-text-theater/35 "}>· Second Edition</span></p>
 					
-					<p className={"text-frame-text-theater/35 sm:block hidden"}>13-15 November 2026 [TODO]</p>
+					<p className={"text-frame-text-theater sm:block hidden"}>13-15 November 2026 [TODO]</p>
 					
 					<button
 						className={"flex items-center gap-2 text-frame-text-theater/35 hover:text-frame-text-theater transition-colors"}
