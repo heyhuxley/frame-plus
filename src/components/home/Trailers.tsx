@@ -1,25 +1,20 @@
 "use client"
 
 import {useState} from "react";
-import {Film, films} from "@/lib/mock-data";
+import {Film, acceptedFilms} from "@/lib/mock-data";
 import Trailer from "@/components/ui/Trailer";
 import FilmLink from "@/components/ui/FilmLink";
 import useScrollReveal from "@/hooks/useScrollReveal";
 import Ring from "@/components/ui/Ring";
+import {formatScreeningTime} from "@/utils/format-screening-time";
 
 const Trailers = () => {
-	const [trailer, setTrailer] = useState<Film>(films[0])
+	const [trailer, setTrailer] = useState<Film>(acceptedFilms[0])
 	const {title, director, country, posterUrl, runtime, screeningAt, trailerUrl} = trailer;
 	
 	// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 	// @ts-expect-error
-	const date = new Date(screeningAt);
-	const dayName = new Intl.DateTimeFormat('en-US', {weekday: 'long'}).format(date);
-	const time = new Intl.DateTimeFormat('en-GB', {
-		hour: '2-digit',
-		minute: '2-digit',
-		hour12: false
-	}).format(date);
+	const date = formatScreeningTime(screeningAt);
 	
 	useScrollReveal("#trailers")
 	
@@ -63,14 +58,14 @@ const Trailers = () => {
 					<div className="text-frame-text flex flex-col md:flex-row md:items-center justify-between gap-4">
 						<div>
 							<p className={"font-serif text-3xl tracking-[-0.02em] sm:text-4xl"}>{title}</p>
-							<p className={"mt-2 text-sm text-muted"}>{director} · {country} · {runtime} · {`${dayName} ${time}`}</p>
+							<p className={"mt-2 text-sm text-muted"}>{director} · {country} · {runtime} · {`${date}`}</p>
 						</div>
 						
-						<FilmLink>Go to the film page</FilmLink>
+						<FilmLink path={`films/${trailer.id}`}>Go to the film page</FilmLink>
 					</div>
 				</div>
-				<div className="w-full flex flex-col border-t border-frame-text/15">
-					{films.map((film) => (
+				<div className="w-full flex flex-col">
+					{acceptedFilms.map((film) => (
 						<button key={film.id} onClick={() => setTrailer(film)}>
 							<Trailer {...film} currentTrailerId={trailer.id}/>
 						</button>

@@ -1,6 +1,6 @@
 "use client"
 
-import {acceptedFilms} from "@/lib/accepted-films";
+// import {acceptedFilms} from "@/lib/accepted-films";
 import {useRef, useState} from "react"
 import {SpeakerHighIcon, SpeakerXIcon} from "@phosphor-icons/react"
 import BuyTicket from "@/components/ui/BuyTicket";
@@ -11,12 +11,13 @@ import {useGSAP} from "@gsap/react";
 import gsap from "gsap";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
 import {SplitText} from "gsap/SplitText";
+import {acceptedFilms} from "@/lib/mock-data";
 
 gsap.registerPlugin(ScrollTrigger)
 gsap.registerPlugin(SplitText)
 
 const Hero = () => {
-	const {posterUrl, trailerUrl, title, director, country, runtime, synopsis} = acceptedFilms[0];
+	const {id, posterUrl, trailerUrl, title, director, country, runtime, synopsis} = acceptedFilms[0];
 	const videoRef = useRef<HTMLVideoElement>(null)
 	const [soundOn, setSoundOn] = useState(false)
 	const {time, dayLabel} = getHeroDailyHighlights()[0];
@@ -126,7 +127,7 @@ const Hero = () => {
 					<div className="w-max flex flex-col">
 						<div className={"highlight flex flex-wrap items-center gap-5 text-[14px]"}>
 							<BuyTicket>Get Tickets</BuyTicket>
-							<FilmLink>About the film</FilmLink>
+							<FilmLink path={`/films/${id}`}>About the film</FilmLink>
 						</div>
 						<p className={"highlight w-max mt-3 text-[13px] text-bone/70"}>From €12 a screening, or €64 for
 							the
