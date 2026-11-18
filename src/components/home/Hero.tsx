@@ -47,9 +47,14 @@ const Hero = () => {
 			stagger: {
 				amount: 0.5
 			},
-			ease: "power2.inOut"
+			ease: "power2.inOut",
+			scrollTrigger: {
+				trigger: "#hero",
+				start: "top center",
+				once: true
+			}
 		})
-	}, [])
+	})
 	
 	return (
 		<section

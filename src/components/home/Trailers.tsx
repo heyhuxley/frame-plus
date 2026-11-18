@@ -5,6 +5,7 @@ import {Film, films} from "@/lib/mock-data";
 import Trailer from "@/components/ui/Trailer";
 import FilmLink from "@/components/ui/FilmLink";
 import useScrollReveal from "@/hooks/useScrollReveal";
+import Ring from "@/components/ui/Ring";
 
 const Trailers = () => {
 	const [trailer, setTrailer] = useState<Film>(films[0])
@@ -33,26 +34,31 @@ const Trailers = () => {
 			
 			<div
 				className="grid gap-10 border-t border-frame-text/35 pt-8 lg:grid-cols-[minmax(0,8fr)_minmax(0,4fr)] lg:gap-12">
-				<div className="flex flex-col gap-6">
-					<video
-						poster={posterUrl}
-						preload="auto"
-						muted={true}
-						autoPlay
-						playsInline
-						loop
-						// controls
-						className={"w-full aspect-square"}
-					>
-						<source src={trailerUrl} type="video/mp4"/>
-						<track
-							// src="/path/to/captions.vtt"
-							kind="subtitles"
-							srcLang="en"
-							label="English"
-						/>
-						Your browser does not support the video tag.
-					</video>
+				<div className="relative flex flex-col gap-6">
+					<div className={"relative"}>
+						<video
+							poster={posterUrl}
+							preload="auto"
+							muted={true}
+							autoPlay
+							playsInline
+							loop
+							// controls
+							className={"relative w-full aspect-square"}
+						>
+							<source src={trailerUrl} type="video/mp4"/>
+							<track
+								// src="/path/to/captions.vtt"
+								kind="subtitles"
+								srcLang="en"
+								label="English"
+							/>
+							Your browser does not support the video tag.
+						</video>
+						<div className={"absolute w-full h-full inset-0 flex justify-center items-center cursor-pointer"}>
+							<Ring/>
+						</div>
+					</div>
 					
 					<div className="text-frame-text flex flex-col md:flex-row md:items-center justify-between gap-4">
 						<div>
@@ -63,7 +69,7 @@ const Trailers = () => {
 						<FilmLink>Go to the film page</FilmLink>
 					</div>
 				</div>
-				<div className="w-full flex flex-col divide-solid divide-y divide-frame-text/15">
+				<div className="w-full flex flex-col border-t border-frame-text/15">
 					{films.map((film) => (
 						<button key={film.id} onClick={() => setTrailer(film)}>
 							<Trailer {...film} currentTrailerId={trailer.id}/>
