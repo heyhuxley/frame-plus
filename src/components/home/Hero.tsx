@@ -47,7 +47,7 @@ const Hero = () => {
 			stagger: {
 				amount: 0.5
 			},
-			ease: "power2.inOut",
+			ease: "power1.inOut",
 			scrollTrigger: {
 				trigger: "#hero",
 				start: "top center",
@@ -110,13 +110,13 @@ const Hero = () => {
 							<p id="title"
 							   className={"mt-4 max-w-[12ch] font-serif text-[56px] leading-[0.92] tracking-[-0.02em] sm:text-[104px] lg:text-[128px] xl:text-[148px]"}>{title}</p>
 						</div>
-						<div className="flex flex-col gap-1">
-							<p className={"highlight text-[18px]"}>A film by {director} <span
+						<div className="highlight flex flex-col gap-1">
+							<p className={"text-[18px]"}>A film by {director} <span
 								className={"text-frame-text-theater/35 mix-blend-difference"}>· {country} · {runtime}</span>
 							</p>
 							
-							<p className={"highlight mt-3 text-[15px] leading-relaxed text-bone/85"}>{synopsis}</p>
-							<p className={"highlight mt-3 text-[13px] text-bone/70"}>The director joins for questions
+							<p className={"mt-3 text-[15px] leading-relaxed text-bone/85"}>{synopsis}</p>
+							<p className={"mt-3 text-[13px] text-bone/70"}>The director joins for questions
 								once the
 								credits
 								end.</p>

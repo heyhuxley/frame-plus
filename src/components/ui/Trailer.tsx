@@ -13,8 +13,8 @@ const Trailer = ({
 	currentTrailerId: string
 }) => {
 	return (
-		<div className={"group w-full text-frame-text flex items-center gap-4 py-3 border-b border-frame-text/15"}>
-			<Image width={40} height={60} src={posterUrl} alt={`${title} open trailer`} className={"text-[10px]"}/>
+		<div className={"group w-auto h-auto text-frame-text flex items-center gap-4 py-3 border-b border-frame-text/15"}>
+			<Image width={40} height={60} src={posterUrl} alt={`${title} trailer`} className={"text-[10px]"}/>
 			
 			<div className="w-full flex items-center justify-between gap-2">
 				<div className="flex flex-col items-start">

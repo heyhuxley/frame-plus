@@ -8,7 +8,7 @@ const Schedule = () => {
 	return (
 		<Link
 			href="/schedule"
-			className={"highlight grid sm:grid-cols-3 divide-y sm:divide-x divide-frame-text-theater/35  border-t border-frame-text-theater/35"}>
+			className={"grid sm:grid-cols-3 divide-y sm:divide-x divide-frame-text-theater/35  border-t border-frame-text-theater/35"}>
 			{days.map(({dateKey, dayLabel, count, filmTitle, time}) => (
 				<div
 					className={"py-4 sm:p-4 flex items-center sm:items-start justify-between sm:justify-start sm:flex-col gap-6 sm:gap-1"}

@@ -18,12 +18,12 @@ const Navbar = () => {
 				<div className="flex items-center gap-8">
 					<Link href="/" className={"flex items-center justify-center"}>
 						<Image draggable={"false"} loading="eager" className={"w-10"} src={logo} alt="logo"/>
-						<Image draggable={"false"} loading="eager" className={"w-22 -ml-2"} src={wordmark} alt="logo"/>
+						<Image draggable={"false"} loading="eager" className={"w-24 -ml-2"} src={wordmark} alt="logo"/>
 					</Link>
 					
 					<ul className={"flex items-center gap-8 text-[14px]"}>
 						{navLinks.map(({title, path}, index) => (
-							<li className={clsx("link-underline text-frame-text", pathname === path && "text-frame-accent-hover font-medium", index > 0 && "lg:inline-block hidden")}
+							<li className={clsx("link-underline ", pathname === path ? "text-frame-accent font-medium " : "text-frame-text", index > 0 && "lg:inline-block hidden")}
 							    key={title}>
 								<Link href={path} title={title}>{title}</Link>
 							</li>
