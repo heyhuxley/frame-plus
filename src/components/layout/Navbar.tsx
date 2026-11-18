@@ -34,7 +34,7 @@ const Navbar = () => {
 				<div className="text-[14px] flex items-center gap-4">
 					<Link className={"link-underline text-frame-text hidden md:block"} href={"/my-tickets"}>My Tickets</Link>
 					<Link
-						className={"font-medium bg-frame-accent hover:bg-frame-accent-hover hover:scale-[98%] transition-transform text-frame-bg px-4 py-2 rounded-sm"}
+						className={"font-medium bg-frame-accent hover:bg-frame-accent-hover hover:scale-[98%] transition-transform text-frame-bg px-4 py-2 rounded-md"}
 						href={"/my-tickets"}>Buy Tickets
 					</Link>
 				</div>

@@ -142,7 +142,8 @@ export const films: Film[] = [
 		director: "Maya Chen",
 		directorBio:
 			"Maya Chen is a filmmaker based in Detroit. Her work explores the architecture of solitude and the quiet moments between shifts.",
-		directorImage: "[TODO]",
+		directorImage:
+			"https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&q=80",
 		runtime: "12 min",
 		runtimeMinutes: 12,
 		year: 2024,
@@ -150,7 +151,7 @@ export const films: Film[] = [
 		synopsis:
 			"A night-shift projectionist finds a film that was never meant to be shown.",
 		posterUrl:
-			"https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=800&q=80", // [TODO]
+			"https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=800&q=80",
 		trailerUrl: "https://player.vimeo.com/video/76979871",
 		videoUrl: "[TODO]",
 		status: "accepted",
@@ -163,14 +164,15 @@ export const films: Film[] = [
 		director: "Diego Alves",
 		directorBio:
 			"Diego Alves makes short fiction in São Paulo, often set in transitional spaces where strangers brush against one another.",
-		directorImage: "[TODO]",
+		directorImage:
+			"https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80",
 		runtime: "9 min",
 		runtimeMinutes: 9,
 		year: 2023,
 		country: "Brazil",
 		synopsis: "Three strangers sit in a clinic that does not appear on any map.",
 		posterUrl:
-			"https://images.unsplash.com/photo-1517694713250-2259c8b9f124?w=800&q=80", // [TODO]
+			"https://images.unsplash.com/photo-1517694713250-2259c8b9f124?w=800&q=80",
 		trailerUrl: "https://player.vimeo.com/video/76979872",
 		videoUrl: "[TODO]",
 		status: "accepted",
@@ -183,14 +185,15 @@ export const films: Film[] = [
 		director: "Lena Petrova",
 		directorBio:
 			"Lena Petrova works between Moscow and Berlin, mixing found audio with 16mm film to trace signals from places that no longer exist.",
-		directorImage: "[TODO]",
+		directorImage:
+			"https://images.unsplash.com/photo-1517841905240-472988babdf9?w=800&q=80",
 		runtime: "14 min",
 		runtimeMinutes: 14,
 		year: 2024,
 		country: "France",
 		synopsis: "A radio operator receives a transmission from a city that no longer exists.",
 		posterUrl:
-			"https://images.unsplash.com/photo-1531247888847-1e98e0ae416e?w=800&q=80", // [TODO]
+			"https://images.unsplash.com/photo-1531247888847-1e98e0ae416e?w=800&q=80",
 		trailerUrl: "https://player.vimeo.com/video/76979873",
 		videoUrl: "[TODO]",
 		status: "accepted",
@@ -203,14 +206,15 @@ export const films: Film[] = [
 		director: "Samuel Okoye",
 		directorBio:
 			"Samuel Okoye is a Nigerian director who documents vanishing coastal infrastructures and the people who maintain them.",
-		directorImage: "[TODO]",
+		directorImage:
+			"https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&q=80",
 		runtime: "11 min",
 		runtimeMinutes: 11,
 		year: 2023,
 		country: "Nigeria",
 		synopsis: "The final evening of a lighthouse before automation takes over.",
 		posterUrl:
-			"https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80", // [TODO]
+			"https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80",
 		trailerUrl: "https://player.vimeo.com/video/76979874",
 		videoUrl: "[TODO]",
 		status: "accepted",
@@ -223,14 +227,15 @@ export const films: Film[] = [
 		director: "Priya Nair",
 		directorBio:
 			"Priya Nair makes films in Mumbai about technology, memory, and the messages we leave for ourselves.",
-		directorImage: "[TODO]",
+		directorImage:
+			"https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800&q=80",
 		runtime: "8 min",
 		runtimeMinutes: 8,
 		year: 2024,
 		country: "India",
 		synopsis: "A woman records voice messages to her future self that begin answering back.",
 		posterUrl:
-			"https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=800&q=80", // [TODO]
+			"https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=800&q=80",
 		trailerUrl: "https://player.vimeo.com/video/76979875",
 		videoUrl: "[TODO]",
 		status: "accepted",
@@ -243,14 +248,15 @@ export const films: Film[] = [
 		director: "Lars Mueller",
 		directorBio:
 			"Lars Mueller is a German filmmaker who works with non-actors and inherited objects to examine grief and inheritance.",
-		directorImage: "[TODO]",
+		directorImage:
+			"https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=800&q=80",
 		runtime: "10 min",
 		runtimeMinutes: 10,
 		year: 2023,
 		country: "Germany",
 		synopsis: "Two siblings sort through their father's workshop after his passing.",
 		posterUrl:
-			"https://images.unsplash.com/photo-1541963463532-d68292c34b19?w=800&q=80", // [TODO]
+			"https://images.unsplash.com/photo-1541963463532-d68292c34b19?w=800&q=80",
 		trailerUrl: "https://player.vimeo.com/video/76979876",
 		videoUrl: "[TODO]",
 		status: "accepted",
@@ -263,14 +269,15 @@ export const films: Film[] = [
 		director: "Aroha Williams",
 		directorBio:
 			"Aroha Williams is from the Coromandel Peninsula. Her films follow coastal communities and the rhythms of the water.",
-		directorImage: "[TODO]",
+		directorImage:
+			"https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&q=80",
 		runtime: "13 min",
 		runtimeMinutes: 13,
 		year: 2024,
 		country: "New Zealand",
 		synopsis: "A coastal community prepares for the highest tide of the century.",
 		posterUrl:
-			"https://images.unsplash.com/photo-1505126777772-e4224004e015?w=800&q=80", // [TODO]
+			"https://images.unsplash.com/photo-1505126777772-e4224004e015?w=800&q=80",
 		trailerUrl: "https://player.vimeo.com/video/76979877",
 		videoUrl: "[TODO]",
 		status: "rejected",
@@ -282,14 +289,15 @@ export const films: Film[] = [
 		director: "Kenji Sato",
 		directorBio:
 			"Kenji Sato lives in Kyoto and makes short films about folding, silence, and messages that never arrive.",
-		directorImage: "[TODO]",
+		directorImage:
+			"https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=800&q=80",
 		runtime: "7 min",
 		runtimeMinutes: 7,
 		year: 2023,
 		country: "Japan",
 		synopsis: "An origami artist folds a message he cannot send.",
 		posterUrl:
-			"https://images.unsplash.com/photo-1587831882617-b2dcc47b97aa?w=800&q=80", // [TODO]
+			"https://images.unsplash.com/photo-1587831882617-b2dcc47b97aa?w=800&q=80",
 		trailerUrl: "https://player.vimeo.com/video/76979878",
 		videoUrl: "[TODO]",
 		status: "submitted",

@@ -38,14 +38,14 @@ const Hero = () => {
 	// 	return () => ctx.revert();
 	// }, [videoRef])
 	useGSAP(() => {
-		
 		SplitText.create("#title", {type: "lines", linesClass: "highlight"});
 		
 		gsap.from(".highlight", {
 			y: 30,
 			opacity: 0,
+			duration: 0.4,
 			stagger: {
-				amount: 0.5
+				each: 0.08
 			},
 			ease: "power1.inOut",
 			scrollTrigger: {
@@ -110,13 +110,13 @@ const Hero = () => {
 							<p id="title"
 							   className={"mt-4 max-w-[12ch] font-serif text-[56px] leading-[0.92] tracking-[-0.02em] sm:text-[104px] lg:text-[128px] xl:text-[148px]"}>{title}</p>
 						</div>
-						<div className="highlight flex flex-col gap-1">
-							<p className={"text-[18px]"}>A film by {director} <span
+						<div className="flex flex-col gap-1">
+							<p className={"highlight text-[18px]"}>A film by {director} <span
 								className={"text-frame-text-theater/35 mix-blend-difference"}>· {country} · {runtime}</span>
 							</p>
 							
-							<p className={"mt-3 text-[15px] leading-relaxed text-bone/85"}>{synopsis}</p>
-							<p className={"mt-3 text-[13px] text-bone/70"}>The director joins for questions
+							<p className={"highlight mt-3 text-[15px] leading-relaxed text-bone/85"}>{synopsis}</p>
+							<p className={"highlight mt-3 text-[13px] text-bone/70"}>The director joins for questions
 								once the
 								credits
 								end.</p>
