@@ -6,13 +6,15 @@ import Navbar from "@/components/layout/Navbar";
 const inter = Inter({
 	variable: "--font-inter",
 	subsets: ["latin"],
-	weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
+	weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+	preload: true
 })
 
 const playfairDisplay = Playfair_Display({
 	variable: "--font-playfair",
 	subsets: ["latin"],
-	weight: ["400", "500", "600", "700", "800", "900"]
+	weight: ["400", "500", "600", "700", "800", "900"],
+	preload: true
 });
 
 
@@ -28,7 +30,7 @@ export default function RootLayout({children}: LayoutProps<"/">) {
 	return (
 		<html
 			lang="en"
-			className={`${inter.variable} ${playfairDisplay.variable} h-full antialiased`}
+			className={`${inter.variable} ${playfairDisplay.variable} h-full antialiased selection:bg-frame-accent selection:text-frame-text-theater`}
 		>
 		<body className="min-h-full flex flex-col">
 		<Navbar/>

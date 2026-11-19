@@ -1,7 +1,6 @@
 "use client"
 
-// import {acceptedFilms} from "@/lib/accepted-films";
-import {useRef, useState} from "react"
+import {useState} from "react"
 import {SpeakerHighIcon, SpeakerXIcon} from "@phosphor-icons/react"
 import BuyTicket from "@/components/ui/BuyTicket";
 import FilmLink from "@/components/ui/FilmLink";
