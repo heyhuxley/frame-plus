@@ -39,7 +39,7 @@ const Trailers = () => {
 							playsInline
 							loop
 							// controls
-							className={"relative w-full aspect-square"}
+							className={"relative w-full aspect-square object-cover"}
 						>
 							<source src={trailerUrl} type="video/mp4"/>
 							<track

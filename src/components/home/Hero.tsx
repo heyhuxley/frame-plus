@@ -20,33 +20,17 @@ const Hero = () => {
 	const [soundOn, setSoundOn] = useState(false)
 	const {time, dayLabel} = getHeroDailyHighlights()[0];
 	
-	// useGSAP(() => {
-	// 	const ctx = gsap.context(() => {
-	// 		gsap.from(videoRef.current, {
-	// 			objectFit: "bottom",
-	// 			ease: "none",
-	// 			scrollTrigger: {
-	// 				trigger: "#hero",
-	// 				start: "top top",
-	// 				end: "bottom top",
-	// 				scrub: 0.5,
-	// 			},
-	// 		});
-	// 	}, "#hero");
-	//
-	// 	return () => ctx.revert();
-	// }, [videoRef])
 	useGSAP(() => {
 		SplitText.create("#title", {type: "lines", linesClass: "highlight"});
 		
 		gsap.to("#hero-bg-video", {
-			yPercent: -5,
+			yPercent: 8,
 			ease: "none",
 			scrollTrigger: {
 				trigger: "#hero",
 				start: "top top",
 				end: "bottom top",
-				scrub: 0.5
+				scrub: true
 			}
 		})
 		
